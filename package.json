@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/artroot/food-delivery-app/issues"
   },
-  "homepage": "https://github.com/artroot/food-delivery-app#readme"
+  "homepage": "https://github.com/artroot/food-delivery-app#readme",
+  "dependencies": {
+    "typescript": "^4.1.3"
+  }
 }
