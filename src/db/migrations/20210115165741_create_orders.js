@@ -8,8 +8,8 @@ exports.up = (knex, Promise) => {
         table.string('build').notNullable();
         table.string('suit').notNullable();
         table.float('price').notNullable();
-        table.timestamp('created_at').notNullable().defaultTo(knex.fn.now());
-        table.timestamp('completed_at').defaultTo('0000-00-00 00:00:00');
+        table.timestamp('created_at').defaultTo(knex.fn.now());
+        table.datetime('completed_at').defaultTo(knex.raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         table.boolean('completed').defaultTo(false);
         
         table.foreign('customer').onDelete('SET NULL').references('id').inTable('customers');

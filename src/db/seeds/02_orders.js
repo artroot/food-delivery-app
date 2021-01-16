@@ -14,9 +14,7 @@ const address = [
   {street: 'Bleecker Street', build: '5', suit: '7'}
 ];
 
-const randomAddress = () => {
-  return address[Math.floor(Math.random() * address.length)];
-};
+const randomAddress = () => address[Math.floor(Math.random() * address.length)];
 
 const formatedTimestamp = (d)=> {
   const date = d.toISOString().split('T')[0];
