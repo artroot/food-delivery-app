@@ -14,6 +14,9 @@ module.exports = {
     },
     migrations: {
       directory: path.join(BASE_PATH, 'migrations')
+    },
+    seeds: {
+      directory: path.join(BASE_PATH, 'seeds')
     }
 
 };
