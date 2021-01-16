@@ -49,3 +49,10 @@ npm config set food-delivery-app:database:charset utf8
 ```sh
 npm run migrate
 ```
+
+### Run seeds (optional)
+
+Fill database with test data
+```sh
+npm run seed
+```
