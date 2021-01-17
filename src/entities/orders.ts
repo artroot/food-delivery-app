@@ -1,5 +1,7 @@
 import { Base, Entity } from "./entity.abstract";
 
+import { connection } from '../storage';
+
 type Params = Record<string, number | string>;
 
 export interface Order extends Base {
@@ -41,7 +43,11 @@ export class Orders extends Entity {
 
         const query = this.QueryBuilder;
 
-        return query.where({courier}).groupBy('street', 'build', 'suit').orderByRaw('count(id) DESC').select('street', 'build', 'suit');
+        return query
+        .where({courier})
+        .groupBy('street', 'build', 'suit')
+        .orderByRaw('count(id) DESC')
+        .select('street', 'build', 'suit');
 
     }
 
@@ -49,7 +55,19 @@ export class Orders extends Entity {
 
         const query = this.QueryBuilder;
 
-        return query.where(params).count({ count: 'id' });
+        return query
+        .where(params)
+        .count({ count: 'id' });
+
+    }
+
+    public getDeliveryTime(courier: number): Promise<Array<any>> {
+
+        const query = this.QueryBuilder;
+
+        return query
+        .where({courier, completed: 1})
+        .select(connection.raw('TIME_FORMAT(SEC_TO_TIME(AVG(TIMESTAMPDIFF(SECOND, `created_at`, `completed_at`))), "%H:%i:%s") as `avg`'));
 
     }
 

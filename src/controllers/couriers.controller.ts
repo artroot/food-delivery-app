@@ -30,6 +30,17 @@ export class CouriersController extends CRUDController {
         }
     }
 
+    public async getDeliveryTime(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await Orders.getDeliveryTime(ctx.params.id);
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
 }
 
 export default new CouriersController(Couriers);

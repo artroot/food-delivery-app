@@ -13,6 +13,8 @@ export default new Router()
 
 .get('/:id/statistics/orders', ctx => CouriersController.getOrdersCount(ctx))
 
+.get('/:id/statistics/deliverytime', ctx => CouriersController.getDeliveryTime(ctx))
+
 .post('/', ctx => CouriersController.create(ctx))
 
 .put('/:id', ctx => CouriersController.update(ctx))
