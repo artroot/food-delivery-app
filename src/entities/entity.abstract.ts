@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { Storage, QueryBuilder, connection } from '../storage';
 
 export interface Base {
@@ -29,9 +28,21 @@ export abstract class Entity {
 
     public create(data: any): Promise<Array<number>> {
 
+        delete data.id;
+
         const query = this.QueryBuilder;
 
         return query.insert(data);
+
+    }
+
+    public update(id: number, data: any): Promise<number> {
+
+        delete data.id;
+
+        const query = this.QueryBuilder;
+
+        return query.where({id}).update(data);
 
     }
 

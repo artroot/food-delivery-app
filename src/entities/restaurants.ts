@@ -14,6 +14,10 @@ export class Restaurants extends Entity {
         return super.create(data);
     }
 
+    public update(id: number, data: Restaurant): Promise<number> {
+        return super.update(id, data);
+    }
+
 }
 
 export default new Restaurants();

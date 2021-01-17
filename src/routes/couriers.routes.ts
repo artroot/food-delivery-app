@@ -9,4 +9,6 @@ export default new Router()
 
 .get('/:id', ctx => CouriersController.getById(ctx))
 
-.post('/', ctx => CouriersController.create(ctx));
+.post('/', ctx => CouriersController.create(ctx))
+
+.put('/:id', ctx => CouriersController.update(ctx));

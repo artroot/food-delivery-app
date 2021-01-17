@@ -14,6 +14,10 @@ export class Couriers extends Entity {
         return super.create(data);
     }
 
+    public update(id: number, data: Courier): Promise<number> {
+        return super.update(id, data);
+    }
+
 }
 
 export default new Couriers();

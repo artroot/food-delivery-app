@@ -14,6 +14,10 @@ export class Customers extends Entity {
         return super.create(data);
     }
 
+    public update(id: number, data: Customer): Promise<number> {
+        return super.update(id, data);
+    }
+
 }
 
 export default new Customers();

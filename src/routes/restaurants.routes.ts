@@ -9,4 +9,6 @@ export default new Router()
 
 .get('/:id', ctx =>  RestaurantsController.getById(ctx))
 
-.post('/', ctx =>  RestaurantsController.create(ctx));
+.post('/', ctx =>  RestaurantsController.create(ctx))
+
+.put('/:id', ctx =>  RestaurantsController.update(ctx));
