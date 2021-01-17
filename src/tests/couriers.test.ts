@@ -24,6 +24,16 @@ test('GET /api/v1/couriers/:id', async () => {
 
 });
 
+test('GET /api/v1/couriers/:id/statistics/addresses', async () => {
+
+    const response = await request(app.callback()).get('/api/v1/couriers/1/statistics/addresses');
+
+    expect(response.status).toBe(200);
+
+    expect(response.type).toBe('application/json');
+
+});
+
 test('GET /api/v1/couriers/:id Non-existent', async () => {
 
     const response = await request(app.callback()).get('/api/v1/couriers/0');

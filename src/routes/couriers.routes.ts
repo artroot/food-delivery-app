@@ -9,6 +9,8 @@ export default new Router()
 
 .get('/:id', ctx => CouriersController.getById(ctx))
 
+.get('/:id/statistics/addresses', ctx => CouriersController.getAddresses(ctx))
+
 .post('/', ctx => CouriersController.create(ctx))
 
 .put('/:id', ctx => CouriersController.update(ctx))

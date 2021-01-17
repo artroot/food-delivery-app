@@ -37,6 +37,14 @@ export class Orders extends Entity {
         return super.update(id, {completed: 1});
     }
 
+    public getAddresses(courier: number) {
+
+        const query = this.QueryBuilder;
+
+        return query.where({courier}).groupBy('street', 'build', 'suit').orderByRaw('count(id) DESC').select('street', 'build', 'suit');
+
+    }
+
 }
 
 export default new Orders();
