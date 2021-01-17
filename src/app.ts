@@ -1,9 +1,9 @@
 import Koa from 'koa';
 
-import Router from './router';
+import routes from './routes/routes';
 
 const app = new Koa();
 
-app.use(Router.routes());
+app.use(routes);
 
 export default app;

@@ -9,7 +9,5 @@ test('App works', async () => {
 
     expect(response.type).toBe('application/json');
 
-    expect(response.body.status).toBe('success');
-
     expect(response.text).toMatchSnapshot();
 });
