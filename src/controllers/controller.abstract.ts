@@ -8,7 +8,7 @@ export abstract class Controller {
         this._model = model;
     }
 
-    get model(): Entity {
+    get model(): any {
         return this._model;
     }
 

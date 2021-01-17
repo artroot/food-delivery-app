@@ -14,7 +14,6 @@
 | :- | :- | :- |
 | /api/v1/couriers | GET | Return all couriers |
 | /api/v1/couriers/:id | GET | Return a single couriers |
-| /api/v1/couriers/:id/orders | GET | Return courier active orders |
 | /api/v1/couriers/ | POST | Add a courier |
 | /api/v1/couriers/:id | PUT | Update a courier |
 | /api/v1/couriers/:id | DELETE | Remove a courier |
@@ -39,7 +38,6 @@
 ## Orders
 | Route | HTTP verb | Action |
 | :- | :- | :- |
-| /api/v1/orders | GET | Return all orders |
-| /api/v1/orders/:id | GET | Return a single order |
+| /api/v1/orders/courier/:id/:status? | GET | Return courier orders by status |
 | /api/v1/orders | POST | Create order |
 | /api/v1/orders/:id/done | PUT | To complete order |
