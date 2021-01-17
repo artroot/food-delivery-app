@@ -11,6 +11,8 @@ export default new Router()
 
 .get('/:id/statistics/addresses', ctx => CouriersController.getAddresses(ctx))
 
+.get('/:id/statistics/orders', ctx => CouriersController.getOrdersCount(ctx))
+
 .post('/', ctx => CouriersController.create(ctx))
 
 .put('/:id', ctx => CouriersController.update(ctx))

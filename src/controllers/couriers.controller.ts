@@ -19,6 +19,17 @@ export class CouriersController extends CRUDController {
         }
     }
 
+    public async getOrdersCount(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await Orders.countByParams({courier: ctx.params.id, completed: 1});
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
 }
 
 export default new CouriersController(Couriers);

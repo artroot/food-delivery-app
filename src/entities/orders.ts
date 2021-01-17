@@ -45,6 +45,14 @@ export class Orders extends Entity {
 
     }
 
+    public countByParams(params: Params): Promise<Array<any>> {
+
+        const query = this.QueryBuilder;
+
+        return query.where(params).count({ count: 'id' });
+
+    }
+
 }
 
 export default new Orders();
