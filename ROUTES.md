@@ -40,4 +40,4 @@
 | :- | :- | :- |
 | /api/v1/orders/courier/:id/:status? | GET | Return courier orders by status |
 | /api/v1/orders | POST | Create order |
-| /api/v1/orders/:id/done | PUT | To complete order |
+| /api/v1/orders/:id/complete | PUT | To complete order |

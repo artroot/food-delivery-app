@@ -40,6 +40,17 @@ export class OrdersController extends Controller {
         }
     }
 
+    async setCompleted(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await this.model.setCompleted(ctx.params.id);
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
 }
 
 export default new OrdersController(Orders);

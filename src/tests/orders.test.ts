@@ -44,3 +44,13 @@ test('POST /api/v1/orders', async () => {
     order = response.body[0];
 
 });
+
+test('PUT /api/v1/orders/:id/complete', async () => {
+
+    const response = await request(app.callback()).put(`/api/v1/orders/${order.id}/complete`)
+
+    expect(response.status).toBe(200);
+
+    expect(response.type).toBe('application/json');
+
+});

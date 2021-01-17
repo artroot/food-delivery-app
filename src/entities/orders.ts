@@ -33,6 +33,10 @@ export class Orders extends Entity {
         return super.create(data);
     }
 
+    public setCompleted(id: number): Promise<number> {
+        return super.update(id, {completed: 1});
+    }
+
 }
 
 export default new Orders();
