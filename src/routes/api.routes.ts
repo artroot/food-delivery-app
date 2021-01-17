@@ -1,3 +1,7 @@
 import Router from "../router";
 
-export default new Router();
+import restaurantsRoutes from "./restaurants.routes";
+
+export default new Router()
+
+.use('/restaurants', restaurantsRoutes.routes());
