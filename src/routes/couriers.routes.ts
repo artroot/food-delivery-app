@@ -5,4 +5,6 @@ import CouriersController from "../controllers/couriers.controller";
 
 export default new Router()
 
-.get('/', CouriersController.getAll);
+.get('/', ctx => CouriersController.getAll(ctx))
+
+.get('/:id', ctx => CouriersController.getById(ctx));

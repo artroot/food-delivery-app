@@ -1,18 +1,7 @@
-import Router from "router";
-
 import Customers from "../entities/customers";
 
-export class CustomersController {
+import { CRUDController } from "./crud.controller.abstract";
 
-    async getAll(ctx: Router.RouterContext) {
-        try {
-            ctx.body = await Customers.getCollection();
-        } catch (e) {
-            ctx.status = 500;
-            ctx.body = e.message;
-        }
-    }
+export class CustomersController extends CRUDController {}
 
-}
-
-export default new CustomersController();
+export default new CustomersController(Customers);

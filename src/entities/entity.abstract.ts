@@ -12,8 +12,14 @@ export abstract class Entity {
         return this._connection(this.tableName);
     }
 
-    public getCollection() {
-        return this.QueryBuilder.select('*');
+    public getCollection(id?: string) {
+
+        const query = this.QueryBuilder;
+
+        if (id) query.where({id});
+
+        return query.select('*');
+
     }
 
 }

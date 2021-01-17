@@ -1,18 +1,7 @@
-import Router from "router";
-
 import Restaurant from "../entities/restaurants";
 
-export class RestaurantsController {
+import { CRUDController } from "./crud.controller.abstract";
 
-    async getAll(ctx: Router.RouterContext) {
-        try {
-            ctx.body = await Restaurant.getCollection();
-        } catch (e) {
-            ctx.status = 500;
-            ctx.body = e.message;
-        }
-    }
+export class RestaurantsController extends CRUDController {}
 
-}
-
-export default new RestaurantsController();
+export default new RestaurantsController(Restaurant);

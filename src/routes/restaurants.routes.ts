@@ -5,4 +5,6 @@ import RestaurantsController from "../controllers/restaurants.controller";
 
 export default new Router()
 
-.get('/', RestaurantsController.getAll);
+.get('/', ctx =>  RestaurantsController.getAll(ctx))
+
+.get('/:id', ctx =>  RestaurantsController.getById(ctx));
