@@ -1,12 +1,12 @@
 import Router from "router";
 
-import Restaurant from "../entities/restaurants";
+import Couriers from "../entities/couriers";
 
-export class RestaurantsController {
+export class CouriersController {
 
     async getAll(ctx: Router.RouterContext) {
         try {
-            ctx.body = await Restaurant.getCollection();
+            ctx.body = await Couriers.getCollection();
         } catch (e) {
             ctx.status = 500;
             ctx.body = e.message;
@@ -15,4 +15,4 @@ export class RestaurantsController {
 
 }
 
-export default new RestaurantsController();
+export default new CouriersController();

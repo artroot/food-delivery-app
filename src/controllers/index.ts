@@ -12,7 +12,6 @@ export class IndexController {
             ctx.status = 500;
             ctx.body = e.message;
         }
-        return;
     }
 
 }

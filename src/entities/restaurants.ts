@@ -6,10 +6,6 @@ export class Restaurants extends Entity {
         return 'restaurants';
     }
 
-    public getCollection() {
-        return this.QueryBuilder.select('*');
-    }
-
 }
 
 export default new Restaurants();

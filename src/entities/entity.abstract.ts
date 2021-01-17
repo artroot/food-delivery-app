@@ -12,4 +12,8 @@ export abstract class Entity {
         return this._connection(this.tableName);
     }
 
+    public getCollection() {
+        return this.QueryBuilder.select('*');
+    }
+
 }

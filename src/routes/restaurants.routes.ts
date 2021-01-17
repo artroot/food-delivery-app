@@ -1,8 +1,8 @@
 
 import Router from "../router";
 
-import RestaurantController from "../controllers/restaurants";
+import RestaurantsController from "../controllers/restaurants";
 
 export default new Router()
 
-.get('/', RestaurantController.getAll);
+.get('/', RestaurantsController.getAll);
