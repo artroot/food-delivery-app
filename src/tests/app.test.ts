@@ -11,5 +11,4 @@ test('app works', async () => {
 
     expect(response.body.message).toBe('server alive');
 
-    expect(response.text).toMatchSnapshot();
 });
