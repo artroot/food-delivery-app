@@ -10,6 +10,16 @@ export class Couriers extends Entity {
         return 'couriers';
     }
 
+    public getFree(): Promise<Array<any>> {
+
+        const query = this.QueryBuilder;
+
+        return query.whereRaw('couriers.id NOT IN (SELECT `courier` FROM `orders` WHERE `orders`.`completed` = 0)')
+        .select('couriers.id')
+        .limit(1);
+
+    }
+
     public create(data: Courier): Promise<Array<number>> {
         return super.create(data);
     }
