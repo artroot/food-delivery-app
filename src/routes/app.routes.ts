@@ -1,6 +1,6 @@
 import Router from "../router";
 
-import IndexController from "../controllers/index";
+import IndexController from "../controllers/index.controller";
 
 import apiRoutes from './api.routes';
 
