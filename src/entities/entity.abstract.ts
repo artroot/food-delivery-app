@@ -46,4 +46,12 @@ export abstract class Entity {
 
     }
 
+    public delete(id: number): Promise<number> {
+
+        const query = this.QueryBuilder;
+
+        return query.where({id}).delete();
+
+    }
+
 }

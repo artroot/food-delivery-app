@@ -11,4 +11,6 @@ export default new Router()
 
 .post('/', ctx => CustomersController.create(ctx))
 
-.put('/:id', ctx => CustomersController.update(ctx));
+.put('/:id', ctx => CustomersController.update(ctx))
+
+.delete('/:id', ctx => CustomersController.delete(ctx));

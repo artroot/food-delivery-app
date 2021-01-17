@@ -41,7 +41,16 @@ export abstract class CRUDController extends Controller {
             const updated = await this.model.update(ctx.params.id, ctx.request.body);
             if (!updated) throw new Error('Not Modified');
             ctx.body = await this.model.getCollection(ctx.params.id);
-            ctx.status = 200;
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
+    async delete(ctx: Router.RouterContext) {
+        try {
+            ctx.body = await this.model.delete(ctx.params.id);
+            if (!ctx.body) ctx.status = 404;
         } catch (e) {
             ctx.status = 500;
             ctx.body = e.message;

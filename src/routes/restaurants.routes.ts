@@ -11,4 +11,6 @@ export default new Router()
 
 .post('/', ctx =>  RestaurantsController.create(ctx))
 
-.put('/:id', ctx =>  RestaurantsController.update(ctx));
+.put('/:id', ctx =>  RestaurantsController.update(ctx))
+
+.delete('/:id', ctx =>  RestaurantsController.delete(ctx));

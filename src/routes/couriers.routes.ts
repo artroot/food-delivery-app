@@ -11,4 +11,6 @@ export default new Router()
 
 .post('/', ctx => CouriersController.create(ctx))
 
-.put('/:id', ctx => CouriersController.update(ctx));
+.put('/:id', ctx => CouriersController.update(ctx))
+
+.delete('/:id', ctx => CouriersController.delete(ctx));
