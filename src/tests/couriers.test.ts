@@ -9,5 +9,22 @@ test('GET /api/v1/couriers', async () => {
 
     expect(response.type).toBe('application/json');
 
-    expect(response.text).toMatchSnapshot();
+});
+
+test('GET /api/v1/couriers/:id', async () => {
+    const response = await request(app.callback()).get('/api/v1/couriers/1');
+
+    expect(response.status).toBe(200);
+
+    expect(response.type).toBe('application/json');
+
+});
+
+test('GET /api/v1/couriers/:id Non-existent', async () => {
+    const response = await request(app.callback()).get('/api/v1/couriers/0');
+
+    expect(response.status).toBe(404);
+
+    expect(response.type).toBe('application/json');
+
 });
