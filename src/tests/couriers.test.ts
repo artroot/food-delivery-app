@@ -28,3 +28,17 @@ test('GET /api/v1/couriers/:id Non-existent', async () => {
     expect(response.type).toBe('application/json');
 
 });
+
+test('POST /api/v1/couriers', async () => {
+
+    const data = {
+        name: "Test Courier"
+    }
+
+    const response = await request(app.callback()).post('/api/v1/couriers').send(data);
+
+    expect(response.status).toBe(201);
+
+    expect(response.type).toBe('application/json');
+
+});

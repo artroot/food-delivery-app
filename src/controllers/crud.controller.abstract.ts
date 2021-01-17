@@ -25,4 +25,15 @@ export abstract class CRUDController extends Controller {
         }
     }
 
+    async create(ctx: Router.RouterContext) {
+        try {
+            const created = await this.model.create(ctx.request.body);
+            ctx.body = await this.model.getCollection(created[0]);
+            ctx.status = 201;
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
 }

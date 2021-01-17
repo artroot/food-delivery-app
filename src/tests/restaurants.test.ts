@@ -28,3 +28,17 @@ test('GET /api/v1/restaurants/:id Non-existent', async () => {
     expect(response.type).toBe('application/json');
 
 });
+
+test('POST /api/v1/restaurants', async () => {
+
+    const data = {
+        name: "Test Restaurant"
+    }
+
+    const response = await request(app.callback()).post('/api/v1/restaurants').send(data);
+
+    expect(response.status).toBe(201);
+
+    expect(response.type).toBe('application/json');
+
+});

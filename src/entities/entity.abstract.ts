@@ -1,4 +1,9 @@
+import { type } from 'os';
 import { Storage, QueryBuilder, connection } from '../storage';
+
+export interface Base {
+    id?: number;
+}
 
 export abstract class Entity {
 
@@ -12,13 +17,21 @@ export abstract class Entity {
         return this._connection(this.tableName);
     }
 
-    public getCollection(id?: string) {
+    public getCollection(id?: number): Promise<Array<any>> {
 
         const query = this.QueryBuilder;
 
         if (id) query.where({id});
 
         return query.select('*');
+
+    }
+
+    public create(data: any): Promise<Array<number>> {
+
+        const query = this.QueryBuilder;
+
+        return query.insert(data);
 
     }
 
