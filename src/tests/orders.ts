@@ -33,7 +33,7 @@ export default () => {
 
     test('GET /api/v1/orders/courier/:id/:status Non-existent', async () => {
 
-        const response = await request(app.callback()).get(`/api/v1/orders/courier/${order.courier}/1`);
+        const response = await request(app.callback()).get(`/api/v1/orders/courier/0/1`);
 
         expect(response.status).toBe(404);
 
