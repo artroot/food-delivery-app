@@ -50,6 +50,49 @@ export class OrdersController extends Controller {
             ctx.body = e.message;
         }
     }
+    public async getAddresses(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await this.model.getAddresses(ctx.params.id);
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
+    public async getOrdersCount(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await this.model.countByParams({courier: ctx.params.id, completed: 1});
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
+    public async getDeliveryTime(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await this.model.getDeliveryTime(ctx.params.id);
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
+
+    public async getTotalPrice(ctx: Router.RouterContext) {
+        try {
+
+            ctx.body = await this.model.getTotalPriceByParams({courier: ctx.params.id, completed: 1});
+
+        } catch (e) {
+            ctx.status = 500;
+            ctx.body = e.message;
+        }
+    }
 
 }
 

@@ -24,7 +24,7 @@
 | /api/v1/couriers/:id/statistics/addresses | GET | Return list of top addresses |
 | /api/v1/couriers/:id/statistics/orders | GET | Return completed orders count |
 | /api/v1/couriers/:id/statistics/deliverytime | GET | Return average delivery time |
-| /api/v1/couriers/:id/statistics/totalprise | GET | Return total price of completed orders |
+| /api/v1/couriers/:id/statistics/totalprice | GET | Return total price of completed orders |
 
 ## Customers
 | Route | HTTP verb | Action |

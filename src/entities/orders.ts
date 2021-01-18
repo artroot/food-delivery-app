@@ -71,6 +71,14 @@ export class Orders extends Entity {
 
     }
 
+    public getTotalPriceByParams(params: Params): Promise<Array<any>> {
+
+        const query = this.QueryBuilder;
+
+        return query.where(params).sum({ total: 'price' });
+
+    }
+
 }
 
 export default new Orders();

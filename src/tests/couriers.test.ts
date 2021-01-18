@@ -54,6 +54,18 @@ test('GET /api/v1/couriers/:id/statistics/deliverytime', async () => {
 
 });
 
+test('GET /api/v1/couriers/:id/statistics/totalprice', async () => {
+
+    const response = await request(app.callback()).get('/api/v1/couriers/1/statistics/totalprice');
+
+    expect(response.status).toBe(200);
+
+    expect(response.type).toBe('application/json');
+
+    expect(response.body[0].total).toBeDefined();
+
+});
+
 test('GET /api/v1/couriers/:id Non-existent', async () => {
 
     const response = await request(app.callback()).get('/api/v1/couriers/0');

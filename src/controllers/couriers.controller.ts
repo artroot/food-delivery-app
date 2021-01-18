@@ -1,46 +1,7 @@
-import Orders from '../entities/orders';
-
-import Router from 'router';
-
 import Couriers from "../entities/couriers";
 
 import { CRUDController } from "./crud.controller.abstract";
 
-export class CouriersController extends CRUDController {
-
-    public async getAddresses(ctx: Router.RouterContext) {
-        try {
-
-            ctx.body = await Orders.getAddresses(ctx.params.id);
-
-        } catch (e) {
-            ctx.status = 500;
-            ctx.body = e.message;
-        }
-    }
-
-    public async getOrdersCount(ctx: Router.RouterContext) {
-        try {
-
-            ctx.body = await Orders.countByParams({courier: ctx.params.id, completed: 1});
-
-        } catch (e) {
-            ctx.status = 500;
-            ctx.body = e.message;
-        }
-    }
-
-    public async getDeliveryTime(ctx: Router.RouterContext) {
-        try {
-
-            ctx.body = await Orders.getDeliveryTime(ctx.params.id);
-
-        } catch (e) {
-            ctx.status = 500;
-            ctx.body = e.message;
-        }
-    }
-
-}
+export class CouriersController extends CRUDController {}
 
 export default new CouriersController(Couriers);
