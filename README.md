@@ -56,3 +56,25 @@ Fill database with test data
 ```sh
 npm run seed
 ```
+
+## Run Tests
+
+```sh
+npm test
+```
+
+## Build
+
+```sh
+npm build
+```
+
+## Start
+
+```sh
+npm start
+```
+
+## Routes List
+
+[ROUTES.md](ROUTES.md)
