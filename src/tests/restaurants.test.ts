@@ -4,36 +4,6 @@ import app from '../app';
 
 let restaurant: any;
 
-test('GET /api/v1/restaurants', async () => {
-
-    const response = await request(app.callback()).get('/api/v1/restaurants');
-
-    expect(response.status).toBe(200);
-
-    expect(response.type).toBe('application/json');
-
-});
-
-test('GET /api/v1/restaurants/:id', async () => {
-
-    const response = await request(app.callback()).get('/api/v1/restaurants/1');
-
-    expect(response.status).toBe(200);
-
-    expect(response.type).toBe('application/json');
-
-});
-
-test('GET /api/v1/restaurants/:id Non-existent', async () => {
-
-    const response = await request(app.callback()).get('/api/v1/restaurants/0');
-
-    expect(response.status).toBe(404);
-
-    expect(response.type).toBe('application/json');
-
-});
-
 test('POST /api/v1/restaurants', async () => {
 
     const data = {
@@ -67,6 +37,38 @@ test('PUT /api/v1/restaurants/:id', async () => {
     expect(response.body[0].name).toBe(data.name);
 
     restaurant = response.body[0];
+
+});
+
+test('GET /api/v1/restaurants', async () => {
+
+    const response = await request(app.callback()).get('/api/v1/restaurants');
+
+    expect(response.status).toBe(200);
+
+    expect(response.type).toBe('application/json');
+
+});
+
+test('GET /api/v1/restaurants/:id', async () => {
+
+    const response = await request(app.callback()).get(`/api/v1/restaurants/${restaurant.id}`);
+
+    expect(response.status).toBe(200);
+
+    expect(response.type).toBe('application/json');
+
+    expect(response.body[0].id).toBe(restaurant.id);
+
+});
+
+test('GET /api/v1/restaurants/:id Non-existent', async () => {
+
+    const response = await request(app.callback()).get('/api/v1/restaurants/0');
+
+    expect(response.status).toBe(404);
+
+    expect(response.type).toBe('application/json');
 
 });
 
