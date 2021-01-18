@@ -35,9 +35,9 @@
   },
   "homepage": "https://github.com/artroot/food-delivery-app#readme",
   "dependencies": {
-    "knex": "^0.21.15",
+    "knex": "~0.21.15",
     "koa": "~2.13.1",
-    "koa-bodyparser": "^4.3.0",
+    "koa-bodyparser": "~4.3.0",
     "koa-router": "~10.0.0",
     "mysql": "^2.18.1",
     "typescript": "~4.1.3"
