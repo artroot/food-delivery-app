@@ -1,5 +1,12 @@
 # food-delivery-app
 
+- [Requirements](#Requirements)
+- [Install](#Install)
+- [Tests](#Tests)
+- [Build](#Build)
+- [Start](#Start)
+- [Routes List](ROUTES.md)
+
 ## Requirements
 
 - node
@@ -57,7 +64,7 @@ Fill database with test data
 npm run seed
 ```
 
-## Run Tests
+## Tests
 
 ```sh
 npm test
